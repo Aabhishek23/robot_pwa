@@ -1,0 +1,18 @@
+{
+  "name": "ESP32-C3 Robot Controller",
+  "short_name": "ESP32 Robot",
+  "description": "Control your ESP32-C3 Robot over Web Bluetooth.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f0f15",
+  "theme_color": "#00f2fe",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

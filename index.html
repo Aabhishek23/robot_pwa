@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#00f2fe">
+  <meta name="description" content="A premium web app to control ESP32-C3 robot using Web Bluetooth.">
+  <title>ESP32-C3 Robot Controller</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@400;600;800&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-logo">
+        <img src="favicon.svg" alt="Robot Icon" class="logo-img" id="app-logo-img">
+        <h1>ESP32-C3 Robot</h1>
+      </div>
+      <button id="install-btn" class="install-btn hidden">Install App</button>
+    </header>
+
+    <!-- Status Card -->
+    <section class="status-card" id="status-card-section">
+      <div class="status-indicator" id="status-container">
+        <span id="status-pulse" class="pulse-dot disconnected"></span>
+        <span id="status-text">Status: Disconnected</span>
+      </div>
+      <button id="connect-btn" class="connect-btn">Connect to Robot</button>
+    </section>
+
+    <!-- Control Pad -->
+    <main class="controls-section" id="controls-section-main">
+      <h2 class="section-title">Movement Controls</h2>
+      <div class="dpad-container" id="movement-dpad-container">
+        <!-- Up -->
+        <button id="btn-forward" class="dpad-btn up" aria-label="Move Forward">
+          <span class="arrow">▲</span>
+          <span class="key-hint">W / Up</span>
+        </button>
+        <!-- Left -->
+        <button id="btn-left" class="dpad-btn left" aria-label="Turn Left">
+          <span class="arrow">◀</span>
+          <span class="key-hint">A / Left</span>
+        </button>
+        <!-- Center (Stop) -->
+        <button id="btn-stop" class="dpad-btn stop" aria-label="Stop Robot">
+          <span class="stop-icon">■</span>
+          <span class="key-hint-stop">Space</span>
+        </button>
+        <!-- Right -->
+        <button id="btn-right" class="dpad-btn right" aria-label="Turn Right">
+          <span class="arrow">▶</span>
+          <span class="key-hint">D / Right</span>
+        </button>
+        <!-- Down -->
+        <button id="btn-backward" class="dpad-btn down" aria-label="Move Backward">
+          <span class="arrow">▼</span>
+          <span class="key-hint">S / Down</span>
+        </button>
+      </div>
+    </main>
+
+    <!-- Terminal/Log Panel -->
+    <section class="terminal-card" id="terminal-card-section">
+      <div class="terminal-header" id="terminal-header-div">
+        <h3>Terminal Console</h3>
+        <button id="clear-log-btn" class="clear-btn">Clear</button>
+      </div>
+      <div id="terminal-log" class="terminal-log">
+        <div class="log-line system">App initialized. Web Bluetooth ready.</div>
+      </div>
+    </section>
+
+    <!-- Footer Instructions -->
+    <footer class="app-footer" id="app-footer-bar">
+      <p>Use onscreen buttons, WASD/Arrow keys, or Spacebar to control the robot.</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
